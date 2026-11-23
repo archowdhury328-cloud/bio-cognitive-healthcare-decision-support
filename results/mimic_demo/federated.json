@@ -1,0 +1,105 @@
+{
+  "simulated": true,
+  "kind": "proposed",
+  "n_clients": 4,
+  "clients": [
+    {
+      "id": 0,
+      "patients": 11,
+      "n": 286,
+      "events": 18
+    },
+    {
+      "id": 1,
+      "patients": 11,
+      "n": 567,
+      "events": 15
+    },
+    {
+      "id": 2,
+      "patients": 11,
+      "n": 228,
+      "events": 15
+    },
+    {
+      "id": 3,
+      "patients": 11,
+      "n": 427,
+      "events": 13
+    }
+  ],
+  "rounds": 6,
+  "local_epochs": 4,
+  "pooled_epochs_matched": 24,
+  "federated_final": {
+    "round": 6,
+    "auroc": 0.6335944299390774,
+    "average_precision": 0.1216383714819573,
+    "brier": 0.05515319545724506,
+    "n_test_windows": 407,
+    "n_test_positive": 24
+  },
+  "federated_history": [
+    {
+      "round": 1,
+      "auroc": 0.4101392515230635,
+      "average_precision": 0.07971380114226626,
+      "brier": 0.05596996297940427,
+      "n_test_windows": 407,
+      "n_test_positive": 24
+    },
+    {
+      "round": 2,
+      "auroc": 0.39643167972149695,
+      "average_precision": 0.0782962799692803,
+      "brier": 0.0559754578662658,
+      "n_test_windows": 407,
+      "n_test_positive": 24
+    },
+    {
+      "round": 3,
+      "auroc": 0.3908833768494343,
+      "average_precision": 0.07270303919629843,
+      "brier": 0.05595238162470759,
+      "n_test_windows": 407,
+      "n_test_positive": 24
+    },
+    {
+      "round": 4,
+      "auroc": 0.6185813751087902,
+      "average_precision": 0.16811556061718821,
+      "brier": 0.05587473824550126,
+      "n_test_windows": 407,
+      "n_test_positive": 24
+    },
+    {
+      "round": 5,
+      "auroc": 0.6271758050478677,
+      "average_precision": 0.13952226773345203,
+      "brier": 0.05546592348304958,
+      "n_test_windows": 407,
+      "n_test_positive": 24
+    },
+    {
+      "round": 6,
+      "auroc": 0.6335944299390774,
+      "average_precision": 0.1216383714819573,
+      "brier": 0.05515319545724506,
+      "n_test_windows": 407,
+      "n_test_positive": 24
+    }
+  ],
+  "pooled": {
+    "auroc": 0.4598563968668407,
+    "average_precision": 0.05182239859729644,
+    "brier": 0.056102319406306854,
+    "n_test_windows": 407,
+    "n_test_positive": 24
+  },
+  "shared_per_client_per_round": {
+    "parameters": 6497,
+    "approx_megabytes": 0.026,
+    "also_shares": "training-window count (averaging weight)"
+  },
+  "privacy_note": "simulation only; FedAvg provides no formal privacy guarantee"
+}

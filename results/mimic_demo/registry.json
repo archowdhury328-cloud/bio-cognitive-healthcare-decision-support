@@ -1,0 +1,27 @@
+{
+  "promoted": "v0001",
+  "history": [
+    {
+      "version": "v0001",
+      "status": "promoted",
+      "reason": "initial incumbent",
+      "parent": null,
+      "val_metrics": {
+        "val_average_precision": 0.2525425747407381,
+        "val_brier": 0.0734650887057022,
+        "n_val_windows": 299
+      }
+    },
+    {
+      "version": "v0002",
+      "status": "rejected",
+      "reason": "AP 0.2525->0.2329 (need gain >= 0.0); Brier 0.0735->0.0736 (tolerance +0.005)",
+      "parent": "v0001",
+      "val_metrics": {
+        "val_average_precision": 0.23288111304681905,
+        "val_brier": 0.07363616192509724,
+        "n_val_windows": 299
+      }
+    }
+  ]
+}

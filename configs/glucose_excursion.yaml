@@ -1,0 +1,55 @@
+# Release choices for the bounded engineering example (NOT a paper-specified endpoint).
+version: 1
+task:
+  name: glucose_excursion_6h
+  label_semantics: "recorded laboratory glucose excursion, not a diabetes diagnosis"
+  event_variable: glucose        # single source: serum/plasma chemistry glucose, mg/dL
+  threshold_mg_dl: 180           # strictly greater than
+  horizon_h: 6
+  first_landmark_h: 6            # observation start: hours after ICU admission
+  cadence_h: 1
+  history_exclusion: true        # exclude stays with a qualifying value at or before the first landmark
+split:
+  seed: 42
+  fractions: [0.6, 0.2, 0.2]     # train / validation / test, assigned per patient
+features:
+  lookback_h: 24                 # hourly grid length for sequence branches
+  trend_window_h: 12
+  gap_cap_h: 48
+rules:
+  version: rules-1.0
+  min_obs_trend: 2
+  stale_hours:
+    glucose: 12
+    creatinine: 18
+    sodium: 18
+    potassium: 18
+    wbc: 18
+    bun: 18
+  vitals_absent_window_h: 6
+  review_disagreement: 0.15      # ensemble std of member probabilities above this -> review
+models:
+  n_members: 3
+  hidden: 16
+  epochs: 25
+  patience: 6
+  batch_size: 128
+  lr: 0.003
+  weight_decay: 0.0001
+  gbt: {max_iter: 120, learning_rate: 0.05, max_depth: 3, min_samples_leaf: 20, l2_regularization: 1.0}
+  lr_c: 0.5
+alerts:
+  false_alerts_per_patient_day: 0.5   # validation budget for the threshold search
+  cooldown_grid_h: [0, 3, 6]
+metrics:
+  n_bootstrap: 500
+  min_event_patients_point: 3         # fewer positive (or negative) patients -> metric unestimable
+  min_event_patients_ci: 10           # fewer positive patients -> no bootstrap interval
+  calibration_bins: 5
+federated:
+  n_clients: 4
+  rounds: 6
+  local_epochs: 4
+routing:
+  n_train_episodes: 12000
+  n_eval_patients: 400

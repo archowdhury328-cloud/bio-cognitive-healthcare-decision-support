@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv*/
+*.egg-info/
+# raw clinical data and patient-level outputs stay local
+data/raw/
+data/interim/
+local_outputs/
+runs_local/
+*.zip
+demo_output/
+runs_local_reproduce.log

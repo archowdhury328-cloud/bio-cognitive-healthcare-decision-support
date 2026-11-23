@@ -1,0 +1,95 @@
+{
+  "last_value": {
+    "fit_seconds": 0.2,
+    "latency_ms_median": 0.02729999687289819,
+    "n_train_windows": 1508
+  },
+  "logistic": {
+    "fit_seconds": 0.5,
+    "latency_ms_median": 1.6045500015025027,
+    "n_train_windows": 1508
+  },
+  "gbt": {
+    "fit_seconds": 2.8,
+    "latency_ms_median": 7.497449998481898,
+    "n_train_windows": 1508
+  },
+  "gru": {
+    "fit_seconds": 15.4,
+    "latency_ms_median": 8.95354999738629,
+    "n_train_windows": 1508,
+    "n_members": 3,
+    "epochs_run": [
+      9,
+      7,
+      7
+    ],
+    "max_epochs": 25,
+    "hidden": 16
+  },
+  "proposed": {
+    "fit_seconds": 8.4,
+    "latency_ms_median": 10.836150002432987,
+    "n_train_windows": 1508,
+    "n_members": 3,
+    "epochs_run": [
+      8,
+      7,
+      7
+    ],
+    "max_epochs": 25,
+    "hidden": 16
+  },
+  "proposed_no_vitals": {
+    "fit_seconds": 9.9,
+    "latency_ms_median": 10.638249998009996,
+    "n_train_windows": 1508,
+    "n_members": 3,
+    "epochs_run": [
+      14,
+      7,
+      7
+    ],
+    "max_epochs": 25,
+    "hidden": 16
+  },
+  "proposed_no_biomarkers": {
+    "fit_seconds": 20.1,
+    "latency_ms_median": 31.156049997662194,
+    "n_train_windows": 1508,
+    "n_members": 3,
+    "epochs_run": [
+      10,
+      7,
+      7
+    ],
+    "max_epochs": 25,
+    "hidden": 16
+  },
+  "proposed_no_reasoning": {
+    "fit_seconds": 18.8,
+    "latency_ms_median": 30.68975000132923,
+    "n_train_windows": 1508,
+    "n_members": 3,
+    "epochs_run": [
+      10,
+      7,
+      7
+    ],
+    "max_epochs": 25,
+    "hidden": 16
+  },
+  "proposed_concat": {
+    "fit_seconds": 18.3,
+    "latency_ms_median": 28.224099998624297,
+    "n_train_windows": 1508,
+    "n_members": 3,
+    "epochs_run": [
+      7,
+      7,
+      7
+    ],
+    "max_epochs": 25,
+    "hidden": 16
+  }
+}

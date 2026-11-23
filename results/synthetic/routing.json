@@ -1,0 +1,109 @@
+{
+  "synthetic": true,
+  "note": "review-prioritisation demonstration; invented rewards; no clinical claim",
+  "actions": [
+    "wait",
+    "queue_review",
+    "flag_earlier_review"
+  ],
+  "reward": {
+    "detect": 10.0,
+    "miss": -5.0,
+    "cost": {
+      "wait": 0.0,
+      "queue_review": 1.0,
+      "flag_earlier_review": 2.5
+    },
+    "review_delay_h": {
+      "wait": 0,
+      "queue_review": 4,
+      "flag_earlier_review": 1
+    },
+    "horizon_h": 12.0
+  },
+  "n_train_episodes": 12000,
+  "n_eval_patients": 400,
+  "fixed_threshold": {
+    "threshold": 0.3333333333333333,
+    "action": "queue_review",
+    "train": {
+      "mean_return": -0.877,
+      "events": 311,
+      "timely_detected": 279,
+      "timely_detection_rate": 0.8971061093247589,
+      "median_lead_after_review_h": 6.0,
+      "reviews_per_patient_day": 1.9785148445029501
+    },
+    "heldout": {
+      "mean_return": -1.2275,
+      "events": 120,
+      "timely_detected": 102,
+      "timely_detection_rate": 0.85,
+      "median_lead_after_review_h": 6.0,
+      "reviews_per_patient_day": 2.001173571177092
+    }
+  },
+  "learned_q_policy": {
+    "per_seed": [
+      {
+        "mean_return": -1.215,
+        "events": 120,
+        "timely_detected": 37,
+        "timely_detection_rate": 0.30833333333333335,
+        "median_lead_after_review_h": 6.0,
+        "reviews_per_patient_day": 0.6210538669170285
+      },
+      {
+        "mean_return": -0.9975,
+        "events": 120,
+        "timely_detected": 48,
+        "timely_detection_rate": 0.4,
+        "median_lead_after_review_h": 6.0,
+        "reviews_per_patient_day": 0.7309001290928294
+      },
+      {
+        "mean_return": -1.135,
+        "events": 120,
+        "timely_detected": 41,
+        "timely_detection_rate": 0.3416666666666667,
+        "median_lead_after_review_h": 6.0,
+        "reviews_per_patient_day": 0.660485858467316
+      },
+      {
+        "mean_return": -1.5,
+        "events": 120,
+        "timely_detected": 0,
+        "timely_detection_rate": 0.0,
+        "median_lead_after_review_h": null,
+        "reviews_per_patient_day": 0.0
+      },
+      {
+        "mean_return": -1.265,
+        "events": 120,
+        "timely_detected": 37,
+        "timely_detection_rate": 0.30833333333333335,
+        "median_lead_after_review_h": 6.0,
+        "reviews_per_patient_day": 0.6492195751672338
+      }
+    ],
+    "aggregate": {
+      "mean_return": {
+        "mean": -1.2225,
+        "sd": 0.16562004709575467
+      },
+      "timely_detection_rate": {
+        "mean": 0.27166666666666667,
+        "sd": 0.13990075847622208
+      },
+      "reviews_per_patient_day": {
+        "mean": 0.5323318859288816,
+        "sd": 0.26861286136487994
+      },
+      "median_lead_after_review_h": {
+        "mean": 6.0,
+        "sd": 0.0
+      }
+    },
+    "n_seeds": 5
+  }
+}

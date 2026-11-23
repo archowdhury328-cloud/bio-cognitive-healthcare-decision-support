@@ -1,0 +1,20 @@
+SYNTHETIC DEMO (not real patients, not clinical advice)
+stay S00018  landmark t=9 h after ICU admission  horizon 6 h
+event: first recorded glucose > 180 mg/dL (laboratory excursion, not a diabetes diagnosis)
+calibrated risk        : 0.182
+model disagreement     : 0.127  (ensemble std; not a risk)
+modalities observed    : static_ehr, vitals, biomarkers
+modalities missing     : none
+latest glucose age     : 1.1 h
+rules activated        : R1_TREND_MIN_OBS (5 biomarker trends unavailable)
+feature-group contribution to risk (occlusion):
+    static            +0.038
+    vitals            +0.090
+    glucose           +0.082
+    other_biomarkers  +0.021
+    rule_features     +0.021
+simulated decision     : ALERT
+this alert is 11.1 h before the excursion, outside the 6 h horizon: the evaluation counts it as a FALSE alert
+first TRUE alert (inside horizon) at t=16 h -> warning lead time 4.1 h before the recorded excursion at t=20.1 h
+
+files written to demo_output (cohort flow, predictions, trajectory figure, demo_output.json)

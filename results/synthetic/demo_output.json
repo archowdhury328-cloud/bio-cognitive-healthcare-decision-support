@@ -1,0 +1,123 @@
+{
+  "data_check": {
+    "dataset": "fixture",
+    "checked": 3,
+    "verified": 3,
+    "missing": [],
+    "mismatch": [],
+    "ok": true
+  },
+  "cohort_flow": {
+    "all_stays[all]": 137,
+    "all_patients[all]": 120,
+    "excluded:historical_high[all]": 18,
+    "eligible_stays[all]": 119,
+    "eligible_patients[all]": 105,
+    "eligible_event_stays[all]": 35,
+    "eligible_event_patients[all]": 33,
+    "event_free_stays[all]": 84,
+    "windows_total[all]": 4469,
+    "windows_positive[all]": 181,
+    "windows_negative[all]": 3584,
+    "windows_unknown:incomplete_followup[all]": 503,
+    "windows_unknown:no_glucose[all]": 201,
+    "eligible_stays[train]": 69,
+    "eligible_patients[train]": 63,
+    "eligible_event_stays[train]": 19,
+    "eligible_event_patients[train]": 19,
+    "event_free_stays[train]": 50,
+    "windows_total[train]": 2765,
+    "windows_positive[train]": 101,
+    "windows_negative[train]": 2247,
+    "windows_unknown:incomplete_followup[train]": 299,
+    "windows_unknown:no_glucose[train]": 118,
+    "eligible_stays[val]": 23,
+    "eligible_patients[val]": 21,
+    "eligible_event_stays[val]": 8,
+    "eligible_event_patients[val]": 7,
+    "event_free_stays[val]": 15,
+    "windows_total[val]": 732,
+    "windows_positive[val]": 37,
+    "windows_negative[val]": 570,
+    "windows_unknown:incomplete_followup[val]": 90,
+    "windows_unknown:no_glucose[val]": 35,
+    "eligible_stays[test]": 27,
+    "eligible_patients[test]": 21,
+    "eligible_event_stays[test]": 8,
+    "eligible_event_patients[test]": 7,
+    "event_free_stays[test]": 19,
+    "windows_total[test]": 972,
+    "windows_positive[test]": 43,
+    "windows_negative[test]": 767,
+    "windows_unknown:incomplete_followup[test]": 114,
+    "windows_unknown:no_glucose[test]": 48
+  },
+  "policy": {
+    "cooldown_h": 6,
+    "thresholds": {
+      "last_value": 0.22320338315909635,
+      "logistic": 0.11009790229315317,
+      "gbt": 0.2057176187010456,
+      "proposed": 0.1775127286076266
+    },
+    "false_alert_budget_per_patient_day": 0.5
+  },
+  "example": {
+    "stay_id": "S00018",
+    "landmark_h": 9.0,
+    "event_definition": "first recorded glucose > 180 mg/dL (laboratory excursion, not a diabetes diagnosis)",
+    "horizon_h": 6.0,
+    "calibrated_risk": 0.1818,
+    "model_disagreement": 0.1273,
+    "modalities_observed": {
+      "static_ehr": true,
+      "vitals": true,
+      "biomarkers": true
+    },
+    "modalities_missing": [],
+    "glucose_result_age_h": 1.1,
+    "rules_activated": [
+      "R1_TREND_MIN_OBS (5 biomarker trends unavailable)"
+    ],
+    "needs_review": false,
+    "low_agreement": false,
+    "feature_group_contributions": {
+      "static": 0.0383,
+      "vitals": 0.09,
+      "glucose": 0.0817,
+      "other_biomarkers": 0.0207,
+      "rule_features": 0.021
+    },
+    "contribution_method": "group occlusion: risk(full) - risk(group removed); local, not causal",
+    "decision": "ALERT",
+    "event_time_h": 20.1082930812375,
+    "alert_fired": true,
+    "shown_alert_in_horizon": false,
+    "first_true_alert_h": 16.0,
+    "lead_time_h": 4.108293081237498,
+    "synthetic": true
+  },
+  "proposed_test": {
+    "auroc": 0.8448803856766016,
+    "average_precision": 0.36966928879067235,
+    "brier": 0.04367505309881551
+  },
+  "alerts_proposed_test": {
+    "eligible_events": 8,
+    "detected_events": 4,
+    "missed_events": 4,
+    "detection_rate": 0.5,
+    "lead_time_median_h": 3.0875398513623615,
+    "lead_time_q25_h": 1.8258659798547923,
+    "lead_time_q75_h": 4.0531680633575,
+    "n_alerts": 19,
+    "true_alerts": 4,
+    "false_alerts": 11,
+    "unconfirmed_alerts": 4,
+    "monitored_patient_days": 40.5,
+    "false_alerts_per_patient_day": 0.2716049382716049,
+    "unconfirmed_alerts_per_patient_day": 0.09876543209876543,
+    "threshold": 0.1775127286076266,
+    "cooldown_h": 6.0
+  }
+}

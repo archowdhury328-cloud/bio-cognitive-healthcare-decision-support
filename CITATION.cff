@@ -1,0 +1,58 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the software and the article whose design it follows."
+title: "bio-cognitive-healthcare-decision-support: a research reference implementation of multimodal, uncertainty-aware early warning"
+type: software
+version: 0.1.0
+date-released: 2026-11-24
+repository-code: "https://github.com/archowdhury328-cloud/bio-cognitive-healthcare-decision-support"
+authors:
+  - family-names: Chy
+    given-names: Md Asikur Rahman
+    alias: archowdhury328-cloud
+    website: "https://github.com/archowdhury328-cloud"
+abstract: >-
+  Small, tested reference implementation of design ideas described at abstract level in the cited ICAFT 2025
+  paper: gated multimodal fusion of vitals, biomarkers and EHR context, an auditable rule layer, ensemble
+  uncertainty, offline updates, a federated-averaging simulation and an alert-routing simulation. It is a 2026
+  release on a release-chosen task (ICU glucose-excursion early warning). It does not reproduce the paper's
+  results and does not establish who wrote code or ran experiments in 2025.
+preferred-citation:
+  type: conference-paper
+  title: "Bio-Cognitive AI Systems for Predictive Healthcare Decision Support"
+  collection-title: "2025 1st International Conference on Advancement in Futuristic Technologies (ICAFT)"
+  conference:
+    name: "2025 1st International Conference on Advancement in Futuristic Technologies (ICAFT)"
+    location: "Belagavi, India"
+    date-start: 2025-12-19
+    date-end: 2025-12-21
+  publisher:
+    name: IEEE
+  year: 2025
+  start: 1
+  end: 9
+  doi: "10.1109/ICAFT66710.2025.11453175"
+  notes: "IEEE Xplore listing date supplied by the requester: 2026-03-31 (the Crossref record was created the same day). Author list verified from the Crossref record."
+  authors:
+    - {family-names: Uddin, given-names: Syed Mohammed Muhive}
+    - {family-names: Chy, given-names: Md Asikur Rahman}
+    - {family-names: Sikder, given-names: Tawfiqur Rahman}
+    - {family-names: Faruk, given-names: Md Imtiaz}
+    - {family-names: Adnan, given-names: Muhammad}
+    - {family-names: Hossain, given-names: Md Jubayar}
+    - {family-names: Manik, given-names: Mia Md. Tofayel Gonee}
+references:
+  - type: data
+    title: "MIMIC-IV Clinical Database Demo"
+    version: "2.2"
+    doi: "10.13026/07hj-2a80"
+    publisher: {name: PhysioNet}
+    license: ODbL-1.0
+    authors:
+      - {family-names: Johnson, given-names: Alistair}
+      - {family-names: Bulgarelli, given-names: Lucas}
+      - {family-names: Pollard, given-names: Tom}
+      - {family-names: Gow, given-names: Brian}
+      - {family-names: Moody, given-names: Benjamin}
+      - {family-names: Horng, given-names: Steven}
+      - {family-names: Celi, given-names: Leo Anthony}
+      - {family-names: Mark, given-names: Roger}
